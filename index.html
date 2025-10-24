@@ -3,613 +3,525 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ملخص مهارات اللغة العربية - إصدار قيس</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Marhey:wght@300..700&display=swap" rel="stylesheet">
+    <title>الشرح الكامل لدوسية مهارات عربي - إعداد قيس طلال الجازي</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;700&display=swap" rel="stylesheet">
+    
     <style>
+        /* التنسيقات الأساسية للتصميم المبهر */
         body {
             font-family: 'Tajawal', sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
         }
-        .marhey-font {
-            font-family: 'Marhey', sans-serif;
+
+        header {
+            background-color: #1b3a5b; /* لون أزرق داكن */
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
-        .accordion-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
+
+        header h1 {
+            margin: 0;
+            font-size: 1.8rem;
         }
-        .accordion-header:hover {
-            transform: scale(1.02);
+
+        main {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
         }
-        .quiz-option:hover {
-            transform: scale(1.02);
+
+        .section-title {
+            color: #d9534f; /* لون أحمر جذاب */
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #d9534f;
+            font-weight: 700;
         }
-        .quiz-option.correct {
-            animation: correctPulse 1s infinite;
+
+        .card {
+            background-color: white;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
-        @keyframes correctPulse {
-            0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
-            70% { box-shadow: 0 0 0 10px rgba(34, 197, 94, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
         }
-        .quiz-option:disabled {
-            cursor: not-allowed;
-            opacity: 0.7;
+
+        .card h3 {
+            color: #1b3a5b;
+            border-bottom: 2px solid #f2c75b; /* لون أصفر ذهبي */
+            padding-bottom: 8px;
+            margin-top: 0;
         }
-        .example-box {
-            background-color: #fff7ed;
-            border-right: 4px solid #f97316;
+
+        .note-box {
+            background-color: #e9f7ef;
+            border-right: 5px solid #28a745;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+        }
+
+        .styled-list {
+            list-style: none;
+            padding-right: 0;
+        }
+
+        .styled-list li {
+            position: relative;
+            padding-right: 25px;
+            margin-bottom: 10px;
+        }
+
+        .styled-list li::before {
+            content: '✓';
+            position: absolute;
+            right: 0;
+            color: #28a745;
+            font-weight: bold;
+        }
+
+        /* تنسيقات خاصة بالجداول */
+        .grades-table, .styled-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            font-size: 0.95rem;
+        }
+        .styled-table th, .styled-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        .styled-table th {
+            background-color: #1b3a5b;
+            color: white;
+        }
+        .total {
+            font-weight: bold;
+            background-color: #f2c75b50;
+        }
+
+        /* تنسيق خاص لبطاقات التمارين */
+        .exercise-card {
+            background-color: #fcebeb; 
+            border-right: 5px solid #d9534f;
+        }
+        .exercise-card h3 {
+            color: #d9534f;
+            border-color: #d9534f;
+        }
+        /* تنسيق خاص لقواعد الحذف والزيادة */
+        .rule-list { 
+            list-style: none;
+            padding-right: 0;
+        }
+        .rule-list li {
+            margin-bottom: 20px;
+            border-right: 3px solid #28a745; 
+            padding-right: 10px;
+        }
+        .rule-list li strong {
+            display: block;
+            font-size: 1.1rem;
+            color: #28a745;
+            margin-bottom: 5px;
+        }
+        /* تنسيق خاص للحروف لتمييزها */
+        .char-rule-list {
+            list-style: disc;
+            padding-right: 25px;
+            font-size: 1.05rem;
+        }
+        .char-rule-list li {
+            margin-bottom: 15px;
+            border-bottom: 1px dotted #ccc;
+            padding-bottom: 10px;
+        }
+        .char-rule-list li strong {
+            color: #5a1e8a; /* لون مميز للحروف */
+            font-weight: 700;
+        }
+        
+        /* تنسيق خاص لبطاقة الاختبار */
+        .quiz-link-card {
+            background-color: #5a1e8a;
+            color: white;
+            text-align: center;
+        }
+        .quiz-link-card h3 {
+            color: #f2c75b;
+            border-bottom-color: white;
+        }
+        .quiz-link-button {
+            display: inline-block;
+            background-color: #f2c75b;
+            color: #1b3a5b;
+            padding: 12px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: background-color 0.3s;
+        }
+        .quiz-link-button:hover {
+            background-color: #ffe082;
+        }
+
+        /* تنسيق جديد لقسم الإعراب والمنصوبات */
+        .nominative-card strong.new {
+            color: #1b3a5b;
+        }
+        .manzoob-item {
+            border-bottom: 1px dashed #ccc;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
         }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body>
+    
+    <header>
+        <h1>إعداد الطالب: قيس طلال الجازي</h1>
+    </header>
 
-    <div class="container mx-auto p-6 md:p-10 max-w-4xl">
-        <header class="text-center mb-12">
-            <h1 class="text-5xl font-bold marhey-font text-pink-800 mb-2">ملخص مهارات اللغة العربية</h1>
-            <div class="text-lg text-gray-500">إعداد وتقديم: قيس طلال الجازي</div>
-        </header>
+    <main>
         
-        <section id="overview" class="mb-12">
-            <h2 class="text-4xl font-bold marhey-font text-pink-800 mb-4 text-center">نظرة عامة على المقرر</h2>
-            <p class="text-lg text-gray-700 mb-8 leading-relaxed text-center">أهلاً بك في هذا الملخص التفاعلي لمقرر مهارات اللغة العربية. يهدف هذا التطبيق إلى تبسيط المفاهيم الأساسية في النحو والإملاء وعلامات الترقيم لتسهيل دراستها ومراجعتها.</p>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="bg-white p-6 rounded-xl shadow-lg transform transition-transform hover:scale-105">
-                    <h3 class="text-xl font-bold marhey-font text-pink-700 mb-3 text-center">أساسيات النحو</h3>
-                    <p class="text-gray-600 text-center">فهم أقسام الكلام والفرق بين المعرب والمبني، وهي اللبنة الأولى لإتقان اللغة العربية.</p>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg transform transition-transform hover:scale-105">
-                    <h3 class="text-xl font-bold marhey-font text-pink-700 mb-3 text-center">قواعد الإملاء</h3>
-                    <p class="text-gray-600 text-center">إتقان كتابة الهمزات والتاءات والألف اللينة لتجنب الأخطاء الشائعة.</p>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg transform transition-transform hover:scale-105">
-                    <h3 class="text-xl font-bold marhey-font text-pink-700 mb-3 text-center">علامات الترقيم</h3>
-                    <p class="text-gray-600 text-center">التعرف على أشهر علامات الترقيم واستخداماتها الصحيحة لتنظيم الكتابة.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="grammar-basics" class="mb-12">
-            <h2 class="text-4xl font-bold marhey-font text-pink-800 mb-4 text-center">أساسيات النحو</h2>
-            <p class="text-lg text-gray-700 mb-8 leading-relaxed text-center">النحو هو أساس فهم بنية الجملة العربية. في هذا القسم، سنتناول المفاهيم الأولية كأقسام الكلام والإعراب والبناء، وهي اللبنة الأولى لإتقان اللغة. اضغط على كل عنوان لاستكشاف المحتوى.</p>
-            <div class="space-y-4">
-                <div class="accordion-item bg-white rounded-xl shadow-lg transform transition-transform hover:scale-[1.01]">
-                    <button class="accordion-header w-full text-right p-5 font-bold text-lg text-pink-700 flex justify-between items-center transition-colors hover:bg-gray-100 rounded-xl">
-                        <span>أقسام الكلام</span>
-                        <span class="accordion-icon text-2xl transform transition-transform">+</span>
-                    </button>
-                    <div class="accordion-content p-0 border-t border-gray-200">
-                        <div class="p-5">
-                            <p class="mb-4">تنقسم الكلمة في اللغة العربية إلى ثلاثة أقسام رئيسية هي:</p>
-                            <ul class="list-disc list-inside space-y-3 text-gray-600">
-                                <li><strong>الاسم:</strong> ما يدل على معنى غير مقترن بزمن. مثل: (قلم، محمد، شجرة).</li>
-                                <li><strong>الفعل:</strong> ما يدل على حدث مقترن بزمن. مثل: (كتبَ، يكتبُ، اكتبْ).</li>
-                                <li><strong>الحرف:</strong> ما لا يظهر معناه كاملاً إلا مع غيره. مثل: (في، إلى، هل).</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item bg-white rounded-xl shadow-lg transform transition-transform hover:scale-[1.01]">
-                    <button class="accordion-header w-full text-right p-5 font-bold text-lg text-pink-700 flex justify-between items-center transition-colors hover:bg-gray-100 rounded-xl">
-                        <span>الإعراب والبناء</span>
-                        <span class="accordion-icon text-2xl transform transition-transform">+</span>
-                    </button>
-                    <div class="accordion-content p-0 border-t border-gray-200">
-                        <div class="p-5">
-                            <p class="mb-4">تتغير الكلمات في اللغة حسب موقعها في الجملة:</p>
-                            <ul class="list-disc list-inside space-y-3 text-gray-600">
-                                <li><strong>المعرب:</strong> هو الكلمة التي يتغير آخرها بتغير موقعها الإعرابي. مثال: "جاء <strong>محمدٌ</strong>"، "رأيتُ <strong>محمدًا</strong>".</li>
-                                <li><strong>المبني:</strong> هو الكلمة التي يلزم آخرها حالة واحدة ولا يتغير مهما تغير موقعها. مثال: "جاء <strong>هؤلاءِ</strong>"، "رأيتُ <strong>هؤلاءِ</strong>".</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <section id="marfoat" class="mb-12">
-            <h2 class="text-4xl font-bold marhey-font text-pink-800 mb-4 text-center">المرفوعات</h2>
-            <p class="text-lg text-gray-700 mb-8 leading-relaxed text-center">المرفوعات هي الأسماء التي تكون علامة إعرابها الأساسية هي الضمة. هذه الأنواع تشكل أعمدة الجملة الأساسية كالمبتدأ والفاعل. استكشف أشهر أنواع المرفوعات أدناه.</p>
-             <div class="space-y-4">
-                <div class="accordion-item bg-white rounded-xl shadow-lg transform transition-transform hover:scale-[1.01]">
-                    <button class="accordion-header w-full text-right p-5 font-bold text-lg text-pink-700 flex justify-between items-center transition-colors hover:bg-gray-100 rounded-xl">
-                        <span>الفاعل ونائب الفاعل</span>
-                        <span class="accordion-icon text-2xl transform transition-transform">+</span>
-                    </button>
-                    <div class="accordion-content p-0 border-t border-gray-200">
-                        <div class="p-5">
-                            <ul class="list-disc list-inside space-y-3 text-gray-600">
-                                <li><strong>الفاعل:</strong> اسم مرفوع يدل على من قام بالفعل. مثال: "شرحَ <strong>المعلمُ</strong> الدرسَ".</li>
-                                <li><strong>نائب الفاعل:</strong> اسم مرفوع يحل محل الفاعل بعد حذفه. مثال: "شُرِحَ <strong>الدرسُ</strong>".</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item bg-white rounded-xl shadow-lg transform transition-transform hover:scale-[1.01]">
-                    <button class="accordion-header w-full text-right p-5 font-bold text-lg text-pink-700 flex justify-between items-center transition-colors hover:bg-gray-100 rounded-xl">
-                        <span>المبتدأ والخبر</span>
-                        <span class="accordion-icon text-2xl transform transition-transform">+</span>
-                    </button>
-                    <div class="accordion-content p-0 border-t border-gray-200">
-                        <div class="p-5">
-                            <ul class="list-disc list-inside space-y-3 text-gray-600">
-                                <li><strong>المبتدأ:</strong> اسم مرفوع تبدأ به الجملة الاسمية. مثال: "<strong>العلمُ</strong>".</li>
-                                <li><strong>الخبر:</strong> هو ما يتمم معنى المبتدأ. مثال: "العلمُ <strong>نورٌ</strong>".</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <section id="mansobat" class="mb-12">
-             <h2 class="text-4xl font-bold marhey-font text-pink-800 mb-4 text-center">المنصوبات</h2>
-             <p class="text-lg text-gray-700 mb-8 leading-relaxed text-center">المنصوبات هي الأسماء التي تكون علامة إعرابها الأساسية هي الفتحة. تعد المفاعيل من أشهر أنواع المنصوبات في اللغة.</p>
-             <div class="space-y-4">
-                 <div class="accordion-item bg-white rounded-xl shadow-lg transform transition-transform hover:scale-[1.01]">
-                     <button class="accordion-header w-full text-right p-5 font-bold text-lg text-pink-700 flex justify-between items-center transition-colors hover:bg-gray-100 rounded-xl">
-                         <span>المفاعيل</span>
-                         <span class="accordion-icon text-2xl transform transition-transform">+</span>
-                     </button>
-                     <div class="accordion-content p-0 border-t border-gray-200">
-                         <div class="p-5">
-                             <p class="mb-4">تعتبر المفاعيل من أهم المنصوبات في الجملة الفعلية، وتأتي لتوضح معنى الفعل. وهي عدة أنواع:</p>
-                             <ul class="list-disc list-inside space-y-3 text-gray-600">
-                                <li><strong>المفعول به:</strong> اسم منصوب يدل على من وقع عليه فعل الفاعل. مثال: "قرأ الطالبُ <strong>الكتابَ</strong>".</li>
-                                <li><strong>المفعول المطلق:</strong> مصدر منصوب يأتي من لفظ الفعل لتوكيده أو بيان نوعه. مثال: "فهمتُ الدرسَ <strong>فهمًا</strong>".</li>
-                                <li><strong>المفعول لأجله:</strong> مصدر منصوب يذكر لبيان سبب حدوث الفعل. مثال: "صمتُ <strong>رغبةً</strong> في الأجر".</li>
-                            </ul>
-                         </div>
-                     </div>
-                 </div>
-             </div>
-        </section>
-
-        <section id="nawasikh" class="mb-12">
-            <h2 class="text-4xl font-bold marhey-font text-pink-800 mb-4 text-center">النواسخ</h2>
-            <p class="text-lg text-gray-700 mb-8 leading-relaxed text-center">النواسخ هي كلمات تدخل على الجملة الاسمية لتغير حكم المبتدأ والخبر. أشهرها كان وأخواتها، وإن وأخواتها.</p>
-            <div class="space-y-4">
-                <div class="accordion-item bg-white rounded-xl shadow-lg transform transition-transform hover:scale-[1.01]">
-                    <button class="accordion-header w-full text-right p-5 font-bold text-lg text-pink-700 flex justify-between items-center transition-colors hover:bg-gray-100 rounded-xl">
-                        <span>كان وأخواتها</span>
-                         <span class="accordion-icon text-2xl transform transition-transform">+</span>
-                    </button>
-                    <div class="accordion-content p-0 border-t border-gray-200">
-                        <div class="p-5">
-                            <p class="mb-4">تدخل على الجملة الاسمية فترفع المبتدأ ويسمى "اسمها"، وتنصب الخبر ويسمى "خبرها".</p>
-                            <div class="example-box p-4 rounded-lg">
-                                <p class="font-semibold text-gray-900">مثال:</p>
-                                <p class="text-gray-800">"كانَ الجوُّ <strong>جميلاً</strong>". <br> (الجو: اسم كان مرفوع، جميلاً: خبر كان منصوب).</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                 <div class="accordion-item bg-white rounded-xl shadow-lg transform transition-transform hover:scale-[1.01]">
-                    <button class="accordion-header w-full text-right p-5 font-bold text-lg text-pink-700 flex justify-between items-center transition-colors hover:bg-gray-100 rounded-xl">
-                        <span>إن وأخواتها</span>
-                         <span class="accordion-icon text-2xl transform transition-transform">+</span>
-                    </button>
-                    <div class="accordion-content p-0 border-t border-gray-200">
-                        <div class="p-5">
-                            <p class="mb-4">تدخل على الجملة الاسمية فتنصب المبتدأ ويسمى "اسمها"، وترفع الخبر ويسمى "خبرها".</p>
-                            <div class="example-box p-4 rounded-lg">
-                                <p class="font-semibold text-gray-900">مثال:</p>
-                                <p class="text-gray-800">"إنَّ <strong>العلمَ</strong> نورٌ". <br> (العلم: اسم إن منصوب، نور: خبر إن مرفوع).</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="spelling" class="mb-12">
-             <h2 class="text-4xl font-bold marhey-font text-pink-800 mb-4 text-center">قواعد الإملاء</h2>
-             <p class="text-lg text-gray-700 mb-8 leading-relaxed text-center">الكتابة الصحيحة جزء لا يتجزأ من المهارة اللغوية. هذا القسم يركز على أهم القواعد الإملائية التي تساعد على تجنب الأخطاء الشائعة.</p>
-            <div class="space-y-4">
-                <div class="accordion-item bg-white rounded-xl shadow-lg transform transition-transform hover:scale-[1.01]">
-                    <button class="accordion-header w-full text-right p-5 font-bold text-lg text-pink-700 flex justify-between items-center transition-colors hover:bg-gray-100 rounded-xl">
-                        <span>همزتا الوصل والقطع</span>
-                        <span class="accordion-icon text-2xl transform transition-transform">+</span>
-                    </button>
-                    <div class="accordion-content p-0 border-t border-gray-200">
-                        <div class="p-5">
-                            <p class="mb-4">لتسهيل التمييز بينهما، يمكن وضع حرف الواو (و) أو الفاء (ف) قبل الكلمة. إذا نُطقت الهمزة فهي همزة قطع، وإذا لم تُنطق فهي همزة وصل.</p>
-                            <ul class="list-disc list-inside space-y-3 text-gray-600">
-                                <li><strong>همزة القطع (أ):</strong> تُكتب وتُنطق دائمًا. مثال: <strong>و</strong>أحمد، <strong>ف</strong>إيمان.</li>
-                                <li><strong>همزة الوصل (ا):</strong> لا تُنطق إذا سبقتها كلمة. مثال: <strong>و</strong>استغفر، <strong>ف</strong>استخدم.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item bg-white rounded-xl shadow-lg transform transition-transform hover:scale-[1.01]">
-                    <button class="accordion-header w-full text-right p-5 font-bold text-lg text-pink-700 flex justify-between items-center transition-colors hover:bg-gray-100 rounded-xl">
-                        <span>التاء المربوطة والمفتوحة</span>
-                        <span class="accordion-icon text-2xl transform transition-transform">+</span>
-                    </button>
-                    <div class="accordion-content p-0 border-t border-gray-200">
-                        <div class="p-5">
-                            <p class="mb-4">للتمييز بينهما، قم بالوقف على الكلمة (حذف الحركة). إذا نُطقت هاءً فهي تاء مربوطة، وإذا بقيت تاءً فهي تاء مفتوحة.</p>
-                            <ul class="list-disc list-inside space-y-3 text-gray-600">
-                                <li><strong>التاء المربوطة (ة):</strong> تُنطق هاءً عند الوقف وتاءً عند الوصل. مثال: (مدرسة ← مدرَسَهْ).</li>
-                                <li><strong>التاء المفتوحة (ت):</strong> تُنطق تاءً في الوقف والوصل. مثال: (بيت ← بيْت).</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="punctuation" class="mb-12">
-             <h2 class="text-4xl font-bold marhey-font text-pink-800 mb-4 text-center">علامات الترقيم</h2>
-             <p class="text-lg text-gray-700 mb-8 leading-relaxed text-center">علامات الترقيم هي رموز توضع في النص المكتوب بهدف تنظيمه وتيسير قراءته وفهمه. تعرف على أشهر العلامات ومواضع استخدامها.</p>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="bg-white p-6 rounded-xl shadow-lg text-center transform transition-transform hover:scale-105">
-                    <h3 class="text-4xl font-bold text-pink-700 mb-2">،</h3>
-                    <h4 class="font-bold text-lg">الفاصلة</h4>
-                    <p class="text-sm text-gray-600 mt-2">توضع بين الجمل القصيرة المتصلة المعنى، وبعد المنادى، وبين أقسام الشيء الواحد.</p>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg text-center transform transition-transform hover:scale-105">
-                    <h3 class="text-4xl font-bold text-pink-700 mb-2">؛</h3>
-                    <h4 class="font-bold text-lg">الفاصلة المنقوطة</h4>
-                    <p class="text-sm text-gray-600 mt-2">توضع بين جملتين تكون الثانية سبباً في الأولى.</p>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg text-center transform transition-transform hover:scale-105">
-                    <h3 class="text-4xl font-bold text-pink-700 mb-2">.</h3>
-                    <h4 class="font-bold text-lg">النقطة</h4>
-                    <p class="text-sm text-gray-600 mt-2">توضع في نهاية الجملة التامة المعنى.</p>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg text-center transform transition-transform hover:scale-105">
-                    <h3 class="text-4xl font-bold text-pink-700 mb-2">؟</h3>
-                    <h4 class="font-bold text-lg">علامة الاستفهام</h4>
-                    <p class="text-sm text-gray-600 mt-2">توضع في نهاية جملة الاستفهام.</p>
-                </div>
-                 <div class="bg-white p-6 rounded-xl shadow-lg text-center transform transition-transform hover:scale-105">
-                    <h3 class="text-4xl font-bold text-pink-700 mb-2">!</h3>
-                    <h4 class="font-bold text-lg">علامة التعجب</h4>
-                    <p class="text-sm text-gray-600 mt-2">توضع في نهاية جملة التعجب أو ما يعبر عن فرح أو حزن.</p>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg text-center transform transition-transform hover:scale-105">
-                    <h3 class="text-4xl font-bold text-pink-700 mb-2">:</h3>
-                    <h4 class="font-bold text-lg">النقطتان الرأسيتان</h4>
-                    <p class="text-sm text-gray-600 mt-2">توضعان بعد القول، وبين الشيء وأقسامه.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="exercises" class="mb-12">
-            <h2 class="text-4xl font-bold marhey-font text-pink-800 mb-4 text-center">تدريبات تفاعلية</h2>
-            <p class="text-lg text-gray-700 mb-8 leading-relaxed text-center">اختبر فهمك للقواعد السابقة من خلال هذه التدريبات السريعة. اختر الإجابة الصحيحة لكل سؤال ولاحظ النتيجة فوراً.</p>
-            <div id="quiz-container" class="space-y-8"></div>
-        </section>
-
-    </div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-    const accordions = document.querySelectorAll('.accordion-item');
-    accordions.forEach(item => {
-        const header = item.querySelector('.accordion-header');
-        const content = item.querySelector('.accordion-content');
-        const icon = item.querySelector('.accordion-icon');
-
-        header.addEventListener('click', () => {
-            const isOpened = content.style.maxHeight && content.style.maxHeight !== '0px';
-            if (isOpened) {
-                content.style.maxHeight = null;
-                content.style.padding = '0';
-                icon.textContent = '+';
-                icon.style.transform = 'rotate(0deg)';
-            } else {
-                content.style.maxHeight = content.scrollHeight + 'px';
-                content.style.padding = '1.25rem';
-                icon.textContent = '-';
-                icon.style.transform = 'rotate(180deg)';
-            }
-        });
-    });
-
-    const quizData = [
-        {
-            question: "أي الكلمات التالية تحتوي على همزة وصل؟",
-            options: ["أحمد", "إيمان", "استغفار", "إلى"],
-            answer: "استغفار"
-        },
-        {
-            question: "ما هو إعراب كلمة 'المعلم' في جملة 'كافأ المديرُ المعلمَ'؟",
-            options: ["فاعل مرفوع", "مفعول به منصوب", "خبر مرفوع", "اسم مجرور"],
-            answer: "مفعول به منصوب"
-        },
-        {
-            question: "توضع ...... بين جملتين تكون الثانية سبباً في الأولى.",
-            options: ["الفاصلة (,)", "النقطة (.)", "الفاصلة المنقوطة (;)", "علامة الاستفهام (؟)"],
-            answer: "الفاصلة المنقوطة (;)"
-        },
-        {
-            question: "في جملة 'إن السماءَ صافيةٌ'، كلمة 'السماء' هي:",
-            options: ["اسم إن منصوب", "خبر إن مرفوع", "مبتدأ مرفوع", "فاعل مرفوع"],
-            answer: "اسم إن منصوب"
-        },
-        {
-            question: "علامة رفع الاسم المفرد هي:",
-            options: ["الفتحة", "الكسرة", "الضمة", "السكون"],
-            answer: "الضمة"
-        },
-        {
-            question: "ما نوع الكلمة 'يأكل'؟",
-            options: ["اسم", "فعل", "حرف", "صفة"],
-            answer: "فعل"
-        },
-        {
-            question: "كلمة 'قلم' هي اسم لأنها:",
-            options: ["تدل على شيء", "مقترنة بزمن", "مبنية", "لا معنى لها"],
-            answer: "تدل على شيء"
-        },
-        {
-            question: "في جملة 'نجح الطالبُ'، إعراب 'الطالب' هو:",
-            options: ["مفعول به", "فاعل", "مبتدأ", "خبر"],
-            answer: "فاعل"
-        },
-        {
-            question: "ما هي علامة نصب المفعول به؟",
-            options: ["الضمة", "الفتحة", "الكسرة", "السكون"],
-            answer: "الفتحة"
-        },
-        {
-            question: "في جملة 'صام المؤمنون رغبةً في الأجر'، 'رغبةً' هي:",
-            options: ["مفعول به", "مفعول مطلق", "مفعول لأجله", "خبر كان"],
-            answer: "مفعول لأجله"
-        },
-        {
-            question: "كلمة 'استقبال' هي همزة:",
-            options: ["وصل", "قطع", "استفهام", "وصل وقطع"],
-            answer: "وصل"
-        },
-        {
-            question: "ما هي العلامة المناسبة في الفراغ: 'قال الأستاذ: ... اجتهدوا في دراستكم'؟",
-            options: ["فاصلة (,)", "نقطتان رأسيتان (:)", "فاصلة منقوطة (;)", "نقطة (.)"],
-            answer: "نقطتان رأسيتان (:)"
-        },
-        {
-            question: "في جملة 'كان الجوُّ غائمًا'، 'غائما' هي:",
-            options: ["اسم كان", "خبر كان", "مبتدأ", "فاعل"],
-            answer: "خبر كان"
-        },
-        {
-            question: "أي من الكلمات التالية تنتهي بتاء مفتوحة؟",
-            options: ["شجرة", "فاطمة", "مكتبة", "بنات"],
-            answer: "بنات"
-        },
-        {
-            question: "في جملة 'إن الطالبَ مجتهدٌ'، 'مجتهد' هي:",
-            options: ["اسم إن", "خبر إن", "مبتدأ", "فاعل"],
-            answer: "خبر إن"
-        },
-        {
-            question: "أي علامة ترقيم توضع في نهاية الجملة التامة المعنى؟",
-            options: ["الفاصلة (,)", "الفاصلة المنقوطة (;)", "النقطة (.)", "علامة الاستفهام (؟)"],
-            answer: "النقطة (.)"
-        },
-        {
-            question: "عندما تُنطق التاء هاءً عند الوقف، تكون تاء:",
-            options: ["مفتوحة", "مربوطة", "ساكنة", "متحركة"],
-            answer: "مربوطة"
-        },
-        {
-            question: "كلمة 'انتصار' همزتها:",
-            options: ["همزة وصل", "همزة قطع", "همزة استفهام", "همزة وصل وقطع"],
-            answer: "همزة وصل"
-        },
-        {
-            question: "ما هي علامة رفع نائب الفاعل؟",
-            options: ["الفتحة", "الضمة", "الكسرة", "السكون"],
-            answer: "الضمة"
-        },
-        {
-            question: "في جملة 'فازَ اللاعبُ فوزًا عظيماً'، 'فوزًا' هو:",
-            options: ["مفعول به", "مفعول مطلق", "مفعول لأجله", "تمييز"],
-            answer: "مفعول مطلق"
-        },
-        {
-            question: "في جملة 'أصبح الطالبُ نشيطاً'، 'نشيطاً' هو:",
-            options: ["اسم أصبح", "خبر أصبح", "مبتدأ", "فاعل"],
-            answer: "خبر أصبح"
-        },
-        {
-            question: "ما هو إعراب 'الطفلان' في جملة 'الطفلان يدرسان'؟",
-            options: ["فاعل مرفوع", "مبتدأ مرفوع", "خبر مرفوع", "مفعول به منصوب"],
-            answer: "مبتدأ مرفوع"
-        },
-        {
-            question: "علامة ترقيم توضع بعد القول هي:",
-            options: ["الفاصلة المنقوطة (;)", "النقطة (.)", "علامة الاستفهام (؟)", "النقطتان الرأسيتان (:)"],
-            answer: "النقطتان الرأسيتان (:)"
-        },
-        {
-            question: "أي من الكلمات التالية فعل ماضٍ؟",
-            options: ["يقرأ", "اقرأ", "قراءة", "قرأ"],
-            answer: "قرأ"
-        },
-        {
-            question: "ما هو إعراب 'المجتهدون' في جملة 'أثنى المعلم على المجتهدين'؟",
-            options: ["فاعل مرفوع", "اسم مجرور", "خبر مرفوع", "مفعول به منصوب"],
-            answer: "اسم مجرور"
-        },
-        {
-            question: "في جملة 'تُعقدُ الامتحاناتُ'، 'الامتحانات' هي:",
-            options: ["فاعل", "مبتدأ", "نائب فاعل", "مفعول به"],
-            answer: "نائب فاعل"
-        },
-        {
-            question: "ما هو إعراب كلمة 'الحديقة' في 'الحديقةُ جميلةٌ'؟",
-            options: ["مبتدأ", "خبر", "فاعل", "مفعول به"],
-            answer: "مبتدأ"
-        },
-        {
-            question: "ما نوع همزة 'اسم' في جملة 'اسمك جميل'؟",
-            options: ["همزة وصل", "همزة قطع", "ليست همزة", "همزة وصل وقطع"],
-            answer: "همزة وصل"
-        },
-        {
-            question: "كلمة 'قاضي' تُكتب في حالة الرفع:",
-            options: ["قاضيٌ", "قاضيًا", "قاضٍ", "قاضي"],
-            answer: "قاضٍ"
-        },
-        {
-            question: "في جملة 'إنّ الحقَّ واضحٌ'، كلمة 'واضح' هي:",
-            options: ["خبر إن", "اسم إن", "مبتدأ", "فاعل"],
-            answer: "خبر إن"
-        },
-        {
-            question: "ما هو إعراب كلمة 'الناجحين' في 'أصبح الطلابُ ناجحين'؟",
-            options: ["اسم أصبح", "خبر أصبح", "فاعل", "مفعول به"],
-            answer: "خبر أصبح"
-        },
-        {
-            question: "ما هي علامة رفع المثنى؟",
-            options: ["الواو", "الياء", "الألف", "الضمة"],
-            answer: "الألف"
-        },
-        {
-            question: "كلمة 'فهمت' تنتهي بتاء:",
-            options: ["مربوطة", "مفتوحة", "ساكنة", "متحركة"],
-            answer: "مفتوحة"
-        },
-        {
-            question: "أي من هذه الكلمات مبنية؟",
-            options: ["البيت", "محمد", "هذا", "كتاب"],
-            answer: "هذا"
-        },
-        {
-            question: "ما هي علامة ترقيم توضع بعد السؤال؟",
-            options: ["النقطة (.)", "الفاصلة (,)", "علامة الاستفهام (؟)", "علامة التعجب (!)"],
-            answer: "علامة الاستفهام (؟)"
-        },
-        {
-            question: "في جملة 'أكرم المعلمُ الطالبَ إكراماً'، 'إكراماً' هي:",
-            options: ["مفعول به", "مفعول مطلق", "مفعول لأجله", "اسم مجرور"],
-            answer: "مفعول مطلق"
-        },
-        {
-            question: "ما نوع الكلمة 'إلى'؟",
-            options: ["اسم", "فعل", "حرف", "صفة"],
-            answer: "حرف"
-        },
-        {
-            question: "جملة 'العلم نور' هي جملة:",
-            options: ["فعلية", "اسمية", "شبه جملة", "لا شيء مما سبق"],
-            answer: "اسمية"
-        },
-        {
-            question: "كلمة 'انتهاء' هي همزة:",
-            options: ["وصل", "قطع", "استفهام", "وصل وقطع"],
-            answer: "وصل"
-        },
-        {
-            question: "في جملة 'كانت السيارةُ مسرعةً'، 'مسرعةً' هي:",
-            options: ["اسم كان", "خبر كان", "مبتدأ", "فاعل"],
-            answer: "خبر كان"
-        },
-        {
-            question: "علامة نصب جمع المؤنث السالم هي:",
-            options: ["الفتحة", "الكسرة", "الضمة", "الياء"],
-            answer: "الكسرة"
-        },
-        {
-            question: "ما هو إعراب كلمة 'العلماء' في 'إنَّ العلماءَ ورثةُ الأنبياء'؟",
-            options: ["اسم إن منصوب", "خبر إن مرفوع", "مبتدأ", "فاعل"],
-            answer: "اسم إن منصوب"
-        },
-        {
-            question: "أي علامة توضع بعد المنادى؟",
-            options: ["الفاصلة (,)", "النقطة (.)", "النقطتان الرأسيتان (:)"],
-            answer: "الفاصلة (,)"
-        },
-        {
-            question: "ما هو إعراب كلمة 'الوالدان' في 'أصبح الوالدان فرحين'؟",
-            options: ["اسم أصبح", "خبر أصبح", "مبتدأ", "فاعل"],
-            answer: "اسم أصبح"
-        },
-        {
-            question: "في جملة 'زارني صديقٌ'، 'صديق' هي:",
-            options: ["مفعول به", "فاعل", "مبتدأ", "خبر"],
-            answer: "فاعل"
-        },
-        {
-            question: "أي من هذه الكلمات تاءها تُنطق هاءً عند الوقف؟",
-            options: ["صوت", "بيت", "فتاة", "موت"],
-            answer: "فتاة"
-        },
-        {
-            question: "ما هو إعراب 'المسلمات' في 'إن المسلماتِ قانتاتٌ'؟",
-            options: ["اسم إن منصوب بالكسرة", "خبر إن مرفوع بالضمة", "مبتدأ", "فاعل"],
-            answer: "اسم إن منصوب بالكسرة"
-        },
-        {
-            question: "ما نوع همزة 'احفظ'؟",
-            options: ["همزة وصل", "همزة قطع", "همزة استفهام", "ليست همزة"],
-            answer: "همزة وصل"
-        },
-        {
-            question: "توضع علامة التعجب (!) في نهاية جملة:",
-            options: ["السؤال", "الخبر", "الاستفهام", "التعجب"],
-            answer: "التعجب"
-        },
-        {
-            question: "في جملة 'عادَ المريضُ لراحةٍ'، 'راحة' هي:",
-            options: ["مفعول به", "مفعول لأجله", "اسم مجرور", "خبر"],
-            answer: "اسم مجرور"
-        }
-    ];
-
-    const quizContainer = document.getElementById('quiz-container');
-
-    quizData.forEach((q, index) => {
-        const questionEl = document.createElement('div');
-        questionEl.classList.add('bg-white', 'p-6', 'rounded-xl', 'shadow-lg');
-        
-        const questionTitle = document.createElement('h3');
-        questionTitle.classList.add('text-lg', 'font-semibold', 'mb-4');
-        questionTitle.textContent = `السؤال ${index + 1}: ${q.question}`;
-        questionEl.appendChild(questionTitle);
-
-        const optionsContainer = document.createElement('div');
-        optionsContainer.classList.add('space-y-3');
-        
-        q.options.forEach(optionText => {
-            const optionBtn = document.createElement('button');
-            optionBtn.textContent = optionText;
-            optionBtn.classList.add('quiz-option', 'block', 'w-full', 'text-right', 'p-4', 'rounded-md', 'border', 'border-gray-300', 'hover:bg-pink-50', 'transition-colors', 'transform', 'hover:scale-[1.01]');
+        <section id="introduction" class="content-section">
+            <h2 class="section-title">التعريف بالمقرر والبيانات الأساسية</h2>
             
-            optionBtn.addEventListener('click', () => {
-                const parent = optionBtn.parentElement;
-                Array.from(parent.children).forEach(btn => btn.disabled = true);
+            <div class="card">
+                <h3>أهداف المقرر ووصفه (الغاية التعليمية)</h3>
+                <ul class="styled-list">
+                    <li>تنمية اتجاهات إيجابية لدى الطالب نحو اللغة العربية في جانبها الكتابي.</li>
+                    <li>التعرف على أهم التراكيب النحوية ويتعرف على المرفوعات والمنصوبات.</li>
+                    <li>يتعرف الطالب على الإعراب وعلامات الإعراب الفرعية أي أقسام الإعراب.</li>
+                    <li>يميز بين همزتي الوصل والقطع في الأسماء والأفعال والحروف كتابة وقراءة.</li>
+                    <li>يطبق كتابة الألف اللينة في الأسماء والأفعال والحروف وكتابة التاء المربوطة والمفتوحة.</li>
+                    <li>يحدد الحروف التي تحذف من الكتابة والتي تزاد فيها.</li>
+                    <li>يتعرف الطالب على علامات الترقيم وأشهر مواطنها.</li>
+                    <li>التعرف على الأخطاء اللغوية الشائعة ويصنف الأخطاء الكتابية الشائعة.</li>
+                </ul>
+            </div>
+            
+        </section>
+
+        <section id="grammar-parts" class="content-section">
+            <h2 class="section-title">القسم الأول: التراكيب النحوية (أقسام الكلام وعلاماته)</h2>
+            
+            <div class="card item-card">
+                <h3>أقسام الكلام بالتفصيل وعلامات التمييز</h3>
+                <ul class="parts-of-speech">
+                    <li>
+                        <h4>الاسم:</h4>
+                        <p><strong>التعريف:</strong> ما دلّ على معنى في نفسه ولم يقترن بزمن.</p>
+                        <div class="note-box">
+                            <strong>علاماته:</strong> النداء، التنوين، الجر، "الـ" التعريف، الإسناد (مبتدأ أو فاعل).
+                        </div>
+                    </li>
+                    <li>
+                        <h4>الفعل:</h4>
+                        <p><strong>التعريف:</strong> ما دلّ على حدث مقترن بزمن ماضٍ أو حاضر أو مستقبل.</p>
+                        <div class="note-box">
+                            <strong>علاماته الخمس:</strong> "قد"، السين وسوف، تاء التأنيث الساكنة، تاء الفاعل، ونون التوكيد وياء المخاطبة.
+                        </div>
+                    </li>
+                    <li>
+                        <h4>الحرف (العمَل والمعاني):</h4>
+                        <p><strong>التعريف:</strong> ما دلّ على معنى في غيره، ولا يقبل علامات الاسم أو الفعل. جميع الحروف **مبنية** لا محل لها من الإعراب.</p>
+                        <div class="note-box" style="border-color: #5a1e8a; background-color: #f7f3fb;">
+                            <strong>تصنيفات هامة للحروف وعملها:</strong>
+                            <ul class="char-rule-list">
+                                <li><strong>حروف الجر:</strong> عاملة **تجر الاسم** بعدها. مثال: *مِنْ، إلى، عَنْ...*.</li>
+                                <li>
+                                    <strong>حروف العطف:</strong> تربط بين الكلمات أو الجمل.
+                                    <p>**مثال على "بل"**: حرف إضراب. مثال: *ما جاء محمد **بل** عليٌّ*.</p>
+                                    <p>**مثال على "لكنْ"**: حرف عطف للاستدراك. مثال: *ما قرأت قصة **لكن** كتاباً.*</p>
+                                </li>
+                                <li><strong>الحروف الناسخة:</strong> عاملة **تنصب الاسم وترفع الخبر** (إنّ وأخواتها).</li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="nominatives-full" class="content-section">
+            <h2 class="section-title">القسم الثاني: علامات الإعراب الفرعية والمنصوبات</h2>
+
+            <div class="card nominative-card">
+                <h3>علامات الإعراب الفرعية (أقسام الإعراب)</h3>
+                <p>تنوب هذه العلامات عن الحركات الأصلية (الضمة للرفع، الفتحة للنصب، الكسرة للجر، السكون للجزم).</p>
+                <table class="styled-table">
+                    <thead>
+                        <tr>
+                            <th>حالة الإعراب</th>
+                            <th>العلامة الفرعية</th>
+                            <th>المواضع (أمثلة)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>**الرفع**</td>
+                            <td>**الواو**</td>
+                            <td>جمع المذكر السالم (*المعلمون*)، الأسماء الخمسة (*أخوك*)</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>**الألف**</td>
+                            <td>المثنى (*المعلمان*)</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>**ثبوت النون**</td>
+                            <td>الأفعال الخمسة (*يكتبون*)</td>
+                        </tr>
+                        <tr>
+                            <td>**النصب**</td>
+                            <td>**الياء**</td>
+                            <td>المثنى (*معلمين*)، جمع المذكر السالم (*معلمين*)</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>**الكسرة**</td>
+                            <td>جمع المؤنث السالم (*المعلماتِ*)</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>**الألف**</td>
+                            <td>الأسماء الخمسة (*أخاك*)</td>
+                        </tr>
+                        <tr>
+                            <td>**الجر**</td>
+                            <td>**الياء**</td>
+                            <td>المثنى (*بمعلمين*)، جمع المذكر السالم (*بمعلمين*)، الأسماء الخمسة (*بأخيك*)</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>**الفتحة**</td>
+                            <td>الممنوع من الصرف (*بمساجدَ*)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card nominative-card">
+                <h3>المنصوبات النحوية (أهم المفاعيل والحال)</h3>
+                <p>المنصوبات هي الأسماء التي تقع في موقع النصب وعلامتها الأصلية الفتحة.</p>
+                <div class="manzoob-item">
+                    <strong class="new">1. المفعول به:</strong> ما وقع عليه فعل الفاعل. مثال: *قرأتُ **الكتابَ***.
+                </div>
+                <div class="manzoob-item">
+                    <strong class="new">2. المفعول المطلق:</strong> مصدر منصوب يأتي بعد فعل من لفظه لتأكيده أو بيان نوعه. مثال: *فاز الفريق **فوزاً عظيماً***.
+                </div>
+                <div class="manzoob-item">
+                    <strong class="new">3. الحال:</strong> وصف فضلة منصوب يبين هيئة صاحبه. مثال: *جاء **الرجلُ ضاحكاً***.
+                </div>
+                <div class="manzoob-item">
+                    <strong class="new">4. اسم إنّ وخبرها:</strong> (*إنّ الطالبَ مجتهدٌ*).
+                </div>
+            </div>
+
+            <div class="card nominative-card">
+                <h3>المبتدأ والخبر وأنواعهما (مراجعة للمرفوعات)</h3>
+                <p><strong>المبتدأ:</strong> اسم مُجرّد من العوامل اللفظية. الأصل فيه أن يكون **معرفة**.</p>
+                <div class="note-box">
+                    **أنواع الخبر:** مفرد، جملة (اسمية أو فعلية) ويجب أن تحتوي على **ضمير رابط**، شبه جملة (ظرف أو جار ومجرور).
+                </div>
+            </div>
+            
+            <div class="card nominative-card">
+                <h3>النواسخ: كان وأخواتها وإن وأخواتها</h3>
+                <div class="note-box">
+                    **كان وأخواتها (أفعال):** ترفع المبتدأ (اسمها) وتنصب الخبر (خبرها).
+                </div>
+                <div class="note-box" style="background-color: #f7f3fb; border-color: #5a1e8a;">
+                    **إن وأخواتها (حروف):** تنصب المبتدأ (اسمها) وترفع الخبر (خبرها).
+                </div>
+            </div>
+        </section>
+
+        <section id="hamza-full" class="content-section">
+            <h2 class="section-title">القسم الثالث: قواعد الهمزات</h2>
+
+            <div class="card distinction-card">
+                <h3>ملخص مواضع همزتي الوصل والقطع (21-22)</h3>
+                <p>همزة القطع هي الأصل، والوصل قليلة ومعدودة (اختبارها السهل: وضع الواو/الفاء قبلها).</p>
+                <table class="styled-table">
+                    <thead>
+                        <tr>
+                            <th>الموضع</th>
+                            <th>همزة الوصل (ا)</th>
+                            <th>همزة القطع (أ إ ؤ)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>**الأفعال**</td>
+                            <td>ماضي وأمر ومصدر الخماسي والسداسي، أمر الفعل الثلاثي.</td>
+                            <td>ماضي ومصدر الثلاثي، ماضي وأمر ومصدر الرباعي، كل الأفعال المبدوءة بهمزة المضارعة.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card distinction-card">
+                <h3>رسم الهمزة (المتوسطة والمتطرفة)</h3>
+                <p><strong>سلم قوة الحركات:</strong> الكسرة (أقوى) ← الضمة ← الفتحة ← السكون (أضعف).</p>
                 
-                if (optionText === q.answer) {
-                    optionBtn.classList.remove('border-gray-300', 'hover:bg-pink-50');
-                    optionBtn.classList.add('bg-green-100', 'border-green-500', 'text-green-800', 'font-bold', 'correct');
-                } else {
-                    optionBtn.classList.remove('border-gray-300', 'hover:bg-pink-50');
-                    optionBtn.classList.add('bg-red-100', 'border-red-500', 'text-red-800');
-                    Array.from(parent.children).forEach(btn => {
-                        if (btn.textContent === q.answer) {
-                           btn.classList.remove('border-gray-300');
-                           btn.classList.add('bg-green-100', 'border-green-500', 'text-green-800', 'font-bold', 'correct');
-                        }
-                    });
-                }
-            });
-            optionsContainer.appendChild(optionBtn);
-        });
+                <h4>الهمزة المتطرفة (في آخر الكلمة)</h4>
+                <p>يُنظر إلى حركة الحرف الذي قبلها فقط: على **ألف** (ما قبلها مفتوح)، على **واو** (ما قبلها مضموم)، على **ياء** (ما قبلها مكسور)، على **السطر** (ما قبلها ساكن).</p>
+            </div>
+        </section>
+        
+        <section id="alif-taa-rules" class="content-section">
+            <h2 class="section-title">القسم الرابع: الألف اللينة والتاء المربوطة والمفتوحة</h2>
+            
+            <div class="card item-card">
+                <h3>قواعد كتابة الألف اللينة (الألف المقصورة)</h3>
+                <p>هي ألف ساكنة لا تقبل الحركة، تأتي في وسط الكلمة أو آخرها، ولها حالتان في آخر الكلمة:</p>
+                <ul class="rule-list">
+                    <li>
+                        <strong>1. الألف القائمة (ا):</strong>
+                        <p>تُكتب ألفاً قائمة إذا كان أصلها **واو**.</p>
+                        <p>مثال: **في الأفعال الثلاثية:** *دعا* (لأن مضارعها يدعو)؛ **في الأسماء الثلاثية:** *عصا* (لأن المثنى عصوان).</p>
+                        <p>وتُكتب قائمة دائماً إذا سبقتها ياء (*دنيا، قضايا*) مهما كان عدد الحروف.</p>
+                    </li>
+                    <li>
+                        <strong>2. الألف على شكل ياء غير منقوطة (ى):</strong>
+                        <p>تُكتب على شكل ياء إذا كان أصلها **ياء**.</p>
+                        <p>مثال: **في الأفعال الثلاثية:** *رمى* (لأن مضارعها يرمي)؛ **في الأسماء الثلاثية:** *فتى* (لأن المثنى فتيان).</p>
+                        <p>وتُكتب على شكل ياء في كل كلمة **فوق ثلاثية** لم تسبق ألفها بياء (*اهتدى، مستشفى*).</p>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="card item-card">
+                <h3>قواعد التاء المربوطة (ة) والتاء المفتوحة (ت)</h3>
+                <ul class="rule-list">
+                    <li>
+                        <strong>1. التاء المفتوحة (ت):</strong>
+                        <p>تُنطق **تاء** عند الوصل وعند الوقف.</p>
+                        <p>مواضعها: آخر **الفعل الماضي** (*كتبتُ*)، **جمع المؤنث السالم** (*طالبات*)، **الاسم الثلاثي ساكن الوسط** (*بنت، وقت*)، وبعض **الحروف** (*ليت، لات*).</p>
+                    </li>
+                    <li>
+                        <strong>2. التاء المربوطة (ة):</strong>
+                        <p>تُنطق **تاء** عند الوصل بالحركة، وتُنطق **هاء** عند الوقف عليها بالسكون.</p>
+                        <p>مواضعها: آخر **الاسم المفرد المؤنث** (*طالبة، مدرسة*)، **جمع التكسير** الذي لا ينتهي مفرده بتاء (*قضاة، دعاة*).</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
 
-        questionEl.appendChild(optionsContainer);
-        quizContainer.appendChild(questionEl);
-    });
-});
-</script>
+        <section id="connect-delete-add" class="content-section">
+            <h2 class="section-title">القسم الخامس: قواعد الحذف والزيادة والوصل</h2>
 
+            <div class="card item-card">
+                <h3>أولاً: الحروف التي تحذف من الكتابة</h3>
+                <ul class="rule-list">
+                    <li>
+                        **حذف همزة الوصل:** في البسملة الكاملة، و(*ابن، ابنة*) بين عَلمين، وفي "الـ" التعريف إذا دخلت عليها لام الجر (*للكتاب*).
+                    </li>
+                    <li>
+                        **حذف الألف:** في أسماء الإشارة (*هذا، ذلك*)، ولفظ الجلالة (*إله*)، وكلمة (*لكن*).
+                    </li>
+                    <li>
+                        **حذف الواو:** من الفعل المضارع والماضي المعتل الآخر عند الجزم (يُبنى على حذف حرف العلة) مثل: *لم يدعُ*.
+                    </li>
+                </ul>
+            </div>
+
+            <div class="card item-card">
+                <h3>ثانياً: الحروف التي تُزاد في الكتابة</h3>
+                <ul class="rule-list">
+                    <li>
+                        **زيادة الألف (ألف التفريق):** تُزاد بعد **واو الجماعة** المتصلة بالأفعال للتمييز بينها وبين الواو الأصلية. مثال: *اكتب**وا**، لم يكتب**وا**.*
+                    </li>
+                    <li>
+                        **زيادة الواو:** في بعض الأسماء والأفعال سماعياً، مثل: (*أولئك*)، و(*عمرو*) في حالة الرفع للتمييز عن (*عمر*).
+                    </li>
+                </ul>
+            </div>
+
+            <div class="card item-card">
+                <h3>ثالثاً: الكلمات التي تُوصل مع غيرها</h3>
+                <ul class="rule-list">
+                    <li>
+                        تُوصل (*أنْ*) المصدرية الناصبة بـ (*لا*) لتصبح (**ألاّ**).
+                    </li>
+                    <li>
+                        تُوصل (*إنْ*) الشرطية الجازمة بـ (*ما*) لتصبح (**إمّا**).
+                    </li>
+                    <li>
+                        تُوصل حروف الجر (*مِنْ*، *عَنْ*) بـ (*ما*) الاستفهامية أو الموصولة. مثال: *عمَّ تبحث؟* (*عن* + *ما*).
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="punctuation-errors" class="content-section">
+            <h2 class="section-title">القسم السادس: علامات الترقيم والأخطاء الشائعة</h2>
+            
+            <div class="card item-card">
+                <h3>أشهر مواطن علامات الترقيم 📝</h3>
+                <ul class="rule-list">
+                    <li>
+                        <strong>1. الفاصلة المنقوطة (؛):</strong>
+                        <p>توضع بين جملتين إحداهما **سبب** للأخرى أو **نتيجة** لها. مثال: *رأيتك تعتاد المسجد؛ فأحببتك.*</p>
+                    </li>
+                    <li>
+                        <strong>2. النقطتان الرأسيتان (:):</strong>
+                        <p>توضعان بعد القول أو ما في معناه، وقبل التفصيل أو التمثيل. مثال: *قال المعلم: ادرسوا جيداً.*</p>
+                    </li>
+                    <li>
+                        <strong>3. القوسان الهلاليان ( ):</strong>
+                        <p>يوضعان حول: **الألفاظ الاحتراسية** (التي يخشى أن يفهم منها غير المراد)، **الأرقام والتواريخ**. مثال: *اخرج (غير مطرود) ريثما أكلم زيداً.*</p>
+                    </li>
+                    <li>
+                        <strong>4. علامات التنصيص (" "):</strong>
+                        <p>يوضعان حول **الاقتباس المباشر** أو الكلام المنقول نصاً.</p>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="card item-card exercise-card">
+                <h3>مراجعة عامة وأسئلة للتذكير</h3>
+                <div class="note-box" style="background-color: #fcebeb;">
+                    **أمثلة من التمارين والأخطاء الشائعة:**
+                    <ul class="styled-list">
+                        <li>**س/** الهمزة في (ابن) همزة وصل، والجمع منها (أبناء) همزة قطع. (صحيح).</li>
+                        <li>**س/** الخبر في آية (وعلى أبصارهم غشاوة) نوعه: شبه جملة من الجار والمجرور (وجب تقديم الخبر).</li>
+                        <li>**س/** (كان وأخواتها إذا دخلت على الجملة الاسمية): **ترفع المبتدأ وتنصب الخبر**.</li>
+                        <li>**من الأخطاء الشائعة:** كتابة (هذه، ذلك) بالألف الممدودة (هاذه، ذالك).</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        
+        <div class="card quiz-link-card">
+            <h3>انتقل إلى اختبار التقييم الذاتي</h3>
+            <p>اضغط على الرابط أدناه للوصول إلى 50 سؤالاً بنظام الاختيار من متعدد (ضع دائرة) لتختبر فهمك للقواعد.</p>
+            <a href="quiz.html" class="quiz-link-button" target="_blank">بدء اختبار الـ 50 سؤالاً</a>
+        </div>
+        
+    </main>
 </body>
 </html>
-```eof
